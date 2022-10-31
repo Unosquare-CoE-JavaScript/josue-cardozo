@@ -334,6 +334,7 @@ function addName() {
 }
 ```
 * Closure (PART 1)
+```
 function checkPrime(val) {
   let isPrime = true;
   if ( val === 1 ) {
@@ -360,6 +361,7 @@ function factorize(val) {
   }
   return [val];
 }
+```
 * Closure (PART 2)
 ```
 function toggle(...vals) {
