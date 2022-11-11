@@ -1,0 +1,17 @@
+language: node_js
+node_js: 
+  - "8"
+dist: trusty
+servicer: 
+  - mongodb
+  - redis-server
+env:
+  - NODE_ENV=ci PORT=3000
+cache:
+  directories:
+    - node_modules
+    - client/node_modules
+install:
+  - nohup npm install &
+  - sleep 3
+  - npm run test
