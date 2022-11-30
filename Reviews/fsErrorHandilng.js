@@ -1,8 +1,13 @@
 const fs = require('fs');
 
+const dir = '../Module 1.7';
+const jsonFile = 'sample.json';
+const wrongJson = 'wrong.json';
+const missingFile = 'notoy.json';
+
 try {
-    let rawdata = fs.readFileSync('../Module 1.7');
-    let student = JSON.parse(rawdata);
+    let rawdata = fs.readFileSync(wrongJson);
+    let student = JSON.parse(rawdata);  
     console.log(student);    
 } catch (err) {
     if (err.code === 'ENOENT') {
@@ -12,6 +17,6 @@ try {
         console.log('It is a Dir!');
     }
      else {
-        throw err;
+        console.log('Invalid JSON!');
     }
 }
