@@ -1,0 +1,32 @@
+<div class="row align-items-center h-100 pt-5 pb-5">
+  <div *ngIf="isLoading" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div *ngIf="!isLoading" class="card col-md-8 mx-auto">
+    <div class="card-body text-center">
+      <h5 class="card-title">Select and Upload</h5>
+      <a routerLink="/storage">Storage</a>
+      <div class="input-group my-3">
+        <div class="custom-file">
+          <input
+            type="file"
+            class="custom-file-input"
+            (change)="onChange($event)"
+          />
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-outline-success"
+        (click)="upload()"
+        [disabled]="!file"
+      >
+        Upload
+      </button>
+      <div class="card-footer text-secondary m-1" *ngIf="url">
+        UPLOADED: <a [href]="url">{{file}}</a>
+        (Download link)
+      </div>
+    </div>
+  </div>
+</div>
