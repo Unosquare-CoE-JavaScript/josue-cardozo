@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    title= 'Homepage'
+  body
+    h1= 'Hello World'
+    p Welcome, #{message}
+    form(action='/login', method='post')
+      label Username: 
+      input(type="text", name='username')
+      label Password:
+      input(type="password", name='password')
+      br
+      input(type="submit", value='Log In')
+    
+    h4='Register'
+    form(action='/register', method='post')
+      label Username:
+      input(type="text", name='username')
+      label name:
+      input(type="text", name='name')
+      label Bio:
+      input(type="text", name='bio')
+      label Umage Url:
+      input(type="text", name='pic')
+      label Password:
+      input(type="password", name='password')
+      br
+      input(type="submit", value='Register')
